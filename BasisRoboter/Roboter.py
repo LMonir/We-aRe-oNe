@@ -39,13 +39,13 @@ class Roboter():
         self.beschleunigen(v)
         self.driveBase.drive(v, 0)
 
-    def driveUntil(self, v:int, endSpeed:int, fn, *args):
+    def driveUntil(self, v:int, v_end:int, fn, *args):
         self.driveBase.reset()
         self.beschleunigen(v)
         self.driveBase.drive(v, 0)
         while fn(*args):
             pass
-        self.beschleunigen(endSpeed)
+        self.beschleunigen(v_end)
 
     def unlockMotor(self):
         self.driveBase.stop()
