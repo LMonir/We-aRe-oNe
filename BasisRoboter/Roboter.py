@@ -33,7 +33,7 @@ class Roboter():
         delta_v = (v - v_start)/step
         for i in range(1, step+1):
             self.driveBase.drive(v_start + i * delta_v, 0)
-            wait(20)
+            wait(30)
 
     def drive(self, v:int):
         self.beschleunigen(v)
